@@ -60,5 +60,5 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/rs_launch.py']),
                 launch_arguments=rs_launch.set_configurable_parameters(local_parameters).items(),
                 ),
-            rviz_node
+            #rviz_node
         ])
