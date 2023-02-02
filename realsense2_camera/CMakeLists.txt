@@ -97,6 +97,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 find_package(realsense2 2.48.0)
 if(NOT realsense2_FOUND)
@@ -104,7 +105,12 @@ if(NOT realsense2_FOUND)
 endif()
 
 #set(CMAKE_NO_SYSTEM_FROM_IMPORTED true)
-include_directories(include)
+include_directories(
+	include
+	${realsense2_INCLUDE_DIR}
+	${colcon_INCLUDE_DIRS}
+	${OpenCV_INCLUDE_DIRS}
+)
 
 set(node_plugins "")
 
@@ -154,6 +160,9 @@ add_library(${PROJECT_NAME} SHARED
 
 target_link_libraries(${PROJECT_NAME}
     ${realsense2_LIBRARY}
+	${colcon_LIBRARIES}
+	${CMAKE_THREAD_LIBS_INIT}
+	${OpenCV_LIBRARIES}
     )
 
 set(dependencies
