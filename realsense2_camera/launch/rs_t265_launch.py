@@ -35,10 +35,12 @@ import pathlib
 sys.path.append(str(pathlib.Path(__file__).parent.absolute()))
 import rs_launch
 
-local_parameters = [{'name': 'device_type', 'default': 't265', 'description': 'choose device by type'},
+local_parameters = [
                     {'name': 'enable_pose', 'default': 'true', 'description': 'enable pose stream'},
                     {'name': 'enable_fisheye1',              'default': 'true', 'description': 'enable fisheye1 stream'},
                     {'name': 'enable_fisheye2',              'default': 'true', 'description': 'enable fisheye2 stream'},
+                    {'name': 'camera_name1', 'default': 'T265', 'description': 'camera unique name'},
+                   ]
                    ]
 
 def generate_launch_description():
