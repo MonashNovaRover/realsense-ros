@@ -39,7 +39,6 @@ local_parameters = [{'name': 'device_type', 'default': 't265', 'description': 'c
                     {'name': 'enable_pose', 'default': 'true', 'description': 'enable pose stream'},
                     {'name': 'enable_fisheye1',              'default': 'true', 'description': 'enable fisheye1 stream'},
                     {'name': 'enable_fisheye2',              'default': 'true', 'description': 'enable fisheye2 stream'},
-                    {'name': 'enable_gyro',              'default': 'true', 'description': 'enable gyroscope stream'},
                    ]
 
 def generate_launch_description():

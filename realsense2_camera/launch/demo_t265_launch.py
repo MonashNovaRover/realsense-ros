@@ -51,5 +51,5 @@ def generate_launch_description():
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([ThisLaunchFileDir(), '/rs_t265_launch.py']),
                 ),
-            rviz_node
+            #rviz_node
         ])
